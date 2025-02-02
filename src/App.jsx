@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Search from './components/Search'
 
 const App = () => {
+  const [searchTerm, setSearchTerm] = useState("")
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+    <main>
+      <div className="pattern" />
+        <div className='wrapper'>
+          <header>
+          <img src="./hero-img.png" alt="hero-img" />
+          <h1>Escape into a world of endless <span className='text-gradient'>entertainment</span>  🎬🍿</h1>
+
+          </header>
+
+          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+
+          <div className='text-3xl text-white'>{searchTerm}</div>
+        </div>
+    </main>
   )
 }
 
